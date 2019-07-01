@@ -43,3 +43,13 @@ $router->get('/profile', function () {
 $router->get('/myprofile', ['as' => 'route.myprofile', function () {
     return "Ini adalah profile ku";
 }]);
+
+$router->group(['prefix' => 'admin'], function () use ($router) {
+    $router->get('/home', function () {
+        return "ini adalah halaman admin/home";
+    });
+
+    $router->get('/berita', function () {
+        return "ini adalah halaman admin/berita";
+    });
+});
