@@ -37,9 +37,9 @@ $router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentI
 });
 
 $router->get('/profile', function () {
-    return redirect()->route('/myprofile');
+    return redirect()->route('route.myprofile');
 });
 
-$router->get('/myprofile', function () {
-    return "Nama : Bertho";
-});
+$router->get('/myprofile', ['as' => 'route.myprofile', function () {
+    return "Ini adalah profile ku";
+}]);
