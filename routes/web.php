@@ -35,3 +35,11 @@ $router->get('/user/{id}', function ($id) {
 $router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
     return "Post id = " . $postId . ", Comment id = " . $commentId;
 });
+
+$router->get('/profile', function () {
+    return redirect()->route('/myprofile');
+});
+
+$router->get('/myprofile', function () {
+    return "Nama : Bertho";
+});
