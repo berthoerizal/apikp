@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use \Illuminate\Http\Request;
 use Symfony\Component\Console\Input\Input;
+use Illuminate\Http\Response;
 
 class ExampleController extends Controller
 {
@@ -73,6 +74,11 @@ class ExampleController extends Controller
         // }
 
         return $request->only(['password', 'username']);
+    }
+
+    public function response()
+    {
+        return (new Response('Data Success Created!', 201))->header('Content-Type', 'application/json');
     }
 
     //

@@ -23,6 +23,7 @@ $router->get('post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost');
 $router->get('foo/bar', 'ExampleController@fooBar');
 $router->get('bar/foo', 'ExampleController@fooBar');
 $router->post('user/profile', 'ExampleController@userProfile');
+$router->post('/response', 'ExampleController@response');
 // $router->get('/foo', function () {
 //     return "Hello Get Method";
 // });
