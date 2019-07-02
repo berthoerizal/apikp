@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class ExampleController extends Controller
 {
@@ -44,6 +45,34 @@ class ExampleController extends Controller
             return "false";
         }
         // return $request->path();
+    }
+
+    public function userProfile(Request $request)
+    {
+        // $user['name'] = $request->name;
+        // $user['username'] = $request->username;
+        // $user['password'] = $request->password;
+        // $user['email'] = $request->email;
+
+        // return $user;
+
+        // return $request->all();
+
+        // return $request->input('name', 'bertho');
+
+        // if ($request->has(['name', 'email'])) {
+        //     return "Success";
+        // } else {
+        //     return "Fail";
+        // }
+
+        // if ($request->filled(['name', 'email'])) {
+        //     return "Success";
+        // } else {
+        //     return "Fail";
+        // }
+
+        return $request->only(['password', 'username']);
     }
 
     //
