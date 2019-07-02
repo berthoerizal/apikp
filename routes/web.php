@@ -20,6 +20,7 @@ $router->get('/key', 'ExampleController@generateKey');
 $router->post('/foo', 'ExampleController@fooExample');
 $router->get('/user/{id}', 'ExampleController@getUser');
 $router->get('post/cat1/{cat1}/cat2/{cat2}', 'ExampleController@getPost');
+
 // $router->get('/foo', function () {
 //     return "Hello Get Method";
 // });
