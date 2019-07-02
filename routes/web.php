@@ -20,36 +20,44 @@ $router->get('/key', function () {
     return str_random(32);
 });
 
-$router->get('/foo', function () {
-    return "Hello Get Method";
-});
+// $router->get('/foo', function () {
+//     return "Hello Get Method";
+// });
 
-$router->post('/bar', function () {
-    return "Hello Post Method";
-});
+// $router->post('/bar', function () {
+//     return "Hello Post Method";
+// });
 
-$router->get('/user/{id}', function ($id) {
-    return "User id = " . $id;
-});
+// $router->get('/user/{id}', function ($id) {
+//     return "User id = " . $id;
+// });
 
-$router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
-    return "Post id = " . $postId . ", Comment id = " . $commentId;
-});
+// $router->get('/post/{postId}/comments/{commentId}', function ($postId, $commentId) {
+//     return "Post id = " . $postId . ", Comment id = " . $commentId;
+// });
 
-$router->get('/profile', function () {
-    return redirect()->route('route.myprofile');
-});
+// $router->get('/profile', function () {
+//     return redirect()->route('route.myprofile');
+// });
 
-$router->get('/myprofile', ['as' => 'route.myprofile', function () {
-    return "Ini adalah profile ku";
+// $router->get('/myprofile', ['as' => 'route.myprofile', function () {
+//     return "Ini adalah profile ku";
+// }]);
+
+// $router->group(['prefix' => 'admin'], function () use ($router) {
+//     $router->get('/home', function () {
+//         return "ini adalah halaman admin/home";
+//     });
+
+//     $router->get('/berita', function () {
+//         return "ini adalah halaman admin/berita";
+//     });
+// });
+
+$router->get('/admin/home', ['middleware' => 'age', function () {
+    return "Old Enough";
 }]);
 
-$router->group(['prefix' => 'admin'], function () use ($router) {
-    $router->get('/home', function () {
-        return "ini adalah halaman admin/home";
-    });
-
-    $router->get('/berita', function () {
-        return "ini adalah halaman admin/berita";
-    });
+$router->get('/fail', function () {
+    return "Not yet";
 });
