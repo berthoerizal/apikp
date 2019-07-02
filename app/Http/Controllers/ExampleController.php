@@ -24,5 +24,15 @@ class ExampleController extends Controller
         return "Example Controller foo from method post";
     }
 
+    public function getUser($id)
+    {
+        return "User id = $id";
+    }
+
+    public function getPost($cat1, $cat2)
+    {
+        return "Category 1 = " . $cat1 . ", Category 2 " . $cat2;
+    }
+
     //
 }
