@@ -16,10 +16,8 @@ $router->get('/', function () use ($router) {
 });
 
 //generate application key
-$router->get('/key', function () {
-    return str_random(32);
-});
-
+$router->get('/key', 'ExampleController@generateKey');
+$router->post('/foo', 'ExampleController@fooExample');
 // $router->get('/foo', function () {
 //     return "Hello Get Method";
 // });
